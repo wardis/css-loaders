@@ -1,0 +1,108 @@
+/*
+  Variables
+*/
+:root {
+  --color-loader-back: rgba(0, 0, 0, .06);
+}
+
+/*
+  General style
+*/
+.item-loader {
+  height: 300px;
+}
+.item-content {
+  background: #ecf0f1;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+  1. Circle loader
+*/
+.loader-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  border: 10px solid var(--color-loader-back);
+  border-top-color: #34495e;
+  border-radius: 50%;
+  animation: rotate-circle;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes rotate-circle {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}
+
+/*
+  2. Circle two loader
+*/
+.loader-circle.circle2 {
+  border-bottom-color: #d35400;
+  border-top-color: #d35400;
+  animation-duration: 1.5s;
+}
+
+/*
+  3. Circle three loader
+*/
+.loader-circle.circle3-big {
+  border-bottom-color: var(--color-loader-back);
+  border-top-color: #2ecc71;
+}
+.loader-circle.circle3-small {
+  border-bottom-color: var(--color-loader-back);
+  border-top-color: #2ecc71;
+  width: 80px;
+  height: 80px;
+  animation-duration: 3s;
+}
+
+/*
+  4. Square loader
+*/
+.loader-square {
+  position: absolute;
+  left: 50%;
+  height: 20px;
+  width: 20px;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.square1 {
+  animation: square-translate 2s infinite linear;
+  background-color: #f1c40f;
+}
+.square2 {
+  background-color: #2980b9;
+  animation: square-translate 2s infinite linear;
+  animation-delay: 1s;
+}
+
+@keyframes square-translate {
+  0% {
+    transform: translateX(50px);
+  }
+  25% {
+    transform: translateX(0);
+    z-index: 1;
+    height: 25px;
+    width: 25px;
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  75% {
+    transform: translateX(0);
+    z-index: 0;
+    height: 15px;
+    width: 15px;
+  }
+  100% {
+    transform: translateX(50px);
+  }
+}
